@@ -4,10 +4,12 @@
 	"name": "Python 3",
 	"context": "..",
 	"dockerFile": "Dockerfile",
+	"dockerFile":"Dockerfile2"
 
 	// Use 'settings' to set *default* container specific settings.json values on container create.
 	// You can edit these settings after create using File > Preferences > Settings > Remote.
 	"settings": {
+		"terminal.integrated.shell.windows",
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.linting.enabled": true,
