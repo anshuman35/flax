@@ -51,6 +51,7 @@ def _flatten_dict(input_dict, parent_key='', sep='.'):
       np.integer,
       np.floating,
       np.character,
+      np.bigint
     )
 
     if isinstance(v, dict):
@@ -72,6 +73,7 @@ def _as_default(summary_writer: tf.summary.SummaryWriter, auto_flush: bool):
     context_manager.__enter__()
     yield summary_writer
   finally:
+    new_flush = summary_writer
     old_flush = summary_writer.flush
     new_flush = old_flush if auto_flush else lambda: None
     summary_writer.flush = new_flush
